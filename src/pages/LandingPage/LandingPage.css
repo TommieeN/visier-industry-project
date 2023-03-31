@@ -13,7 +13,6 @@
 .sidebar {
   background-color: #000;
   width: 3.3125rem;
-  height: 100%;
 }
 
 .main {
@@ -41,6 +40,7 @@
   margin-top: 2.5rem;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 .main__option-button {
@@ -60,6 +60,15 @@
   box-shadow: -1px 1px 3px #13182c;
   color: #ffffff;
   cursor: pointer;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.active {
+  background-color: #50A1A7;
+  color: #ffffff;
 }
 
 .section-step {

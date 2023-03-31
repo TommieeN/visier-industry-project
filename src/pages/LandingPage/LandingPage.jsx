@@ -2,6 +2,17 @@ import "./LandingPage.scss";
 import sidebar from "../../assets/visier-sidebar.png";
 
 function LandingPage() {
+
+  function clicked(e) {
+    e.preventDefault();
+    console.log(e.target);
+    e.target.classList.add("active");
+  }
+
+  
+
+
+
   return (
       <div className="container">
         <div className="sidebar">
@@ -17,12 +28,38 @@ function LandingPage() {
           </div>
 
           <div className="main__content">
-            <div className="main__content-box">
+            <div className="main__content-box content-one">
               <div className="main__option">
                 <h2 className="main__option-title">1. What do you want to focus on today?</h2>
                 <div className="main__option-buttons">
-                  <button className="main__option-button">People Data</button>
-                  <button className="main__option-button">Business Data</button>
+                  <button className="main__option-button" onClick={clicked}>People Data</button>
+                  <button className="main__option-button" onClick={clicked}>Business Data</button>
+                </div>
+              </div>
+            </div>
+
+            <div className="main__content-box content-two">
+              <div className="main__option">
+                <h2 className="main__option-title">2. What kind of people data are you looking for?</h2>
+                <div className="main__option-buttons">
+                  <button className="main__option-button">Talent Management</button>
+                  <button className="main__option-button" onClick={clicked}>Employee Engagement</button>
+                  <button className="main__option-button" onClick={clicked}>Diversity & Equity</button>
+                  <button className="main__option-button" onClick={clicked}>Compensation</button>
+                </div>
+              </div>
+            </div>
+
+            <div className="main__content-box content-three">
+              <div className="main__option">
+                <h2 className="main__option-title">3. What kind of Employee data are you looking for? <span className="regular">(Select as many as you like)</span></h2>
+                <div className="main__option-buttons">
+                  <button className="main__option-button" onClick={clicked}>Employee Experience</button>
+                  <button className="main__option-button" onClick={clicked}>Employee Feedback</button>
+                  <button className="main__option-button" onClick={clicked}>Employee Sentiment</button>
+                  <button className="main__option-button" onClick={clicked}>Compensation</button>
+                  <button className="main__option-button" onClick={clicked}>Performance</button>
+                  <button className="main__option-button" onClick={clicked}>Retention</button>
                 </div>
               </div>
             </div>
