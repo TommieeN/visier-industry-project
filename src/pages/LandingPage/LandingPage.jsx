@@ -1,7 +1,12 @@
 import "./LandingPage.scss";
 import sidebar from "../../assets/visier-sidebar.png";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { useNavigate } from "react-router-dom";
+import progressImgOne from "../../assets/progress-images/Numbers.png";
+import progressImgTwo from "../../assets/progress-images/People.png";
+import progressImgThree from "../../assets/progress-images/Talent.png";
+import progressImgFour from "../../assets/progress-images/Employee.png";
+import progressImgFive from "../../assets/progress-images/Results.png";
 
 function LandingPage() {
 
@@ -11,14 +16,19 @@ function LandingPage() {
   const [ optionTwo, setOptionTwo ] = useState(false);
   const [ optionThree, setOptionThree ] = useState(false);
   const [ optionFour, setOptionFour ] = useState(false);
+  
+  const [ progressOne, setProgressOne ] = useState(true);
+  const [ progressTwo, setProgressTwo ] = useState(false);
+  const [ progressThree, setProgressThree ] = useState(false);
+  const [ progressFour, setProgressFour ] = useState(false);
+  const [ progressFive, setProgressFive ] = useState(false);
 
-// let rooted = window.document.root;
-//   useEffect(() => {
-//     rooted = window.document.root;  
-//   }, []);
+
 
   function firstClicked(e) {
     setOptionOne(true);
+    setProgressTwo(true);
+    setProgressOne(false);
     e.preventDefault();
     e.target.classList.add("active");
     e.target.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
@@ -26,6 +36,8 @@ function LandingPage() {
 
   function secondClicked(e) {
     setOptionTwo(true);
+    setProgressTwo(false);
+    setProgressThree(true);
     e.preventDefault();
     e.target.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
     e.target.classList.add("active");
@@ -33,10 +45,12 @@ function LandingPage() {
 
   function thirdClicked(e) {
     setOptionThree(true);
+    setProgressThree(false);
+    setProgressFour(true);
     e.preventDefault();
     e.target.classList.add("active");
     if (optionFour === true) {
-      navigate('/welcome')
+      navigate('/charts')
     }
   }
 
@@ -45,7 +59,8 @@ function LandingPage() {
     e.preventDefault();
     e.target.classList.add("active");
     if (optionThree === true) {
-      navigate('/welcome')
+      navigate('/charts')
+      window.scrollTo({top: 0})
     }
   }
 
@@ -60,8 +75,6 @@ function LandingPage() {
 
 
 
-
-
   return (
       <div className="container">
         <div className="sidebar">
@@ -71,8 +84,21 @@ function LandingPage() {
         <div className="main">
           <div className="main__progression">
             <div className="main__progression-box">
-            <input type="radio" />
-            <p>1</p>
+              {progressOne === true && 
+            <img className="main__progression-img" src={progressImgOne} alt="progression of search query indicator" />
+              }
+              {progressTwo === true && 
+            <img className="main__progression-img" src={progressImgTwo} alt="progression of search query indicator" />
+              }
+              {progressThree === true &&
+            <img className="main__progression-img" src={progressImgThree} alt="progression of search query indicator" />
+              }
+              {progressFour === true &&
+            <img className="main__progression-img" src={progressImgFour} alt="progression of search query indicator" />
+              }
+              {progressFive === true &&
+            <img className="main__progression-img" src={progressImgFive} alt="progression of search query indicator" />
+              } 
             </div>
           </div>
 
@@ -119,65 +145,6 @@ function LandingPage() {
           </div>
         </div>
       </div>
-    // <>
-    //   <h1>Filters:</h1>
-    //   <a href="#section-1">Section 1</a>
-    //   <a href="#section-2">Section 2</a>
-    //   <a href="#section-3">Section 3</a>
-    //   <div id="section-1" className="section-step">
-    //     <div className="section-step--side">
-    //       <div>
-    //         <h3>Step 1/2</h3>
-    //         <h2>What do you want to focus on today?</h2>
-    //       </div>
-    //     </div>
-    //     <div className="section-step--main">
-    //       <div className="section-step__container">
-    //         <a className="section-step__button" href="#section-2">
-    //           People Data
-    //         </a>
-    //         <a className="section-step__button" href="#section-2">
-    //           Business Data
-    //         </a>
-    //       </div>
-    //     </div>
-    //   </div>
-    //   {/* ------------------------------------------------------------------ */}
-    //   <div id="section-2" className="section-step">
-    //     <div className="section-step--side">
-    //       <div>
-    //         <h3>Step 2/2</h3>
-    //         <h2>What do you want to focus on today?</h2>
-    //       </div>
-    //     </div>
-    //     <div className="section-step--main">
-    //       <a href="#section-1" className="section-step__info">
-    //         People Data
-    //       </a>
-    //       <div className="section-step__container">
-    //         <a className="section-step__button" href="#section-3">
-    //           Talent Management and Acquisition
-    //         </a>
-    //         <a className="section-step__button" href="#section-3">
-    //           Employee Engagement and Performance
-    //         </a>
-    //         <a className="section-step__button" href="#section-3">
-    //           Diversity, Equity, and Inclusion
-    //         </a>
-    //         <a className="section-step__button" href="#section-3">
-    //           Compensation and Development
-    //         </a>
-    //       </div>
-    //     </div>
-    //   </div>
-    //   {/* ------------------------------------------------------------------ */}
-    //   <div
-    //     id="section-3"
-    //     style={{ minHeight: "95vh", backgroundColor: "blue" }}
-    //   >
-    //     <h3>Section 3</h3>
-    //   </div>
-    // </>
   );
 }
 
