@@ -1,6 +1,9 @@
 @use 'src/styles/partials/_variables.scss' as *;
 @use 'src/styles/partials/_mixins.scss' as *;
 @use 'src/styles/partials/_global' as *;
+@use 'src/styles/partials/_variables.scss' as *;
+@use 'src/styles/partials/_mixins.scss' as *;
+@use 'src/styles/partials/_global' as *;
 
 
 .container {
@@ -90,16 +93,16 @@
 .section-step {
   min-height: 95vh;
   display: flex;
-  &--graph {
+  &--side {
     width: 40%;
-    background-color: white;
+    background-color: red;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  &--details {
+  &--main {
     flex-grow: 1;
-    background-color: lightgray;
+    background-color: grey;
     display: flex;
     align-items: center;
     justify-content: center;
