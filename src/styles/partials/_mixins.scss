@@ -11,3 +11,9 @@
     @content;
   }
 }
+
+
+@mixin background-opacity-mixin($color, $opacity) {
+  background: $color;
+  background: rgba($color, $opacity);
+}

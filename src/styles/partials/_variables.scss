@@ -17,7 +17,10 @@ $font-color-one: #CBD5E1;
 $font-color-two: #64748B;
 $font-color-three: #1E293B;
 
-$background-color-one: rgba(16, 24, 40, 0.001);
+    //how do I set opacity on hex colors?
+
+// $background-color-one: rgba(16, 24, 40, 0.001);
+$background-color-one: #101828; //use mixin instead of this... @include background-opacity-mixin(#101828, 0.001);
 $background-color-two: #F8FAFC;
 $background-color-three: #F6F9FB;
 $background-color-four: #F6FFFB; //named background/primary ... so maybe primary?
