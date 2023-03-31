@@ -1,0 +1,59 @@
+@use 'src/styles/partials/_variables.scss' as *;
+@use 'src/styles/partials/_mixins.scss' as *;
+@use 'src/styles/partials/_global' as *;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 1rem 2rem;
+    border-left: 6px solid $font-color-one;
+}
+.graph {
+    background: $background-color-three;
+}
+.graph-header {
+    display: flex;
+    margin: 0 2.5rem;
+    &__container {
+        padding: 1rem;
+    }
+}
+
+.scroll-btn {
+    font-size: 1rem;
+    color: $font-color-two;
+    font-weight: 600;
+    background-color: $background-color-three;
+    padding: 0.8rem 1rem;
+    width: 27.09rem;
+    text-align: left;
+    border: none;
+    &__wrapper {
+        // border-left: 4px solid black;
+        &----left--border {
+            border-left: 6px solid $primary-two;
+        }
+    }
+    &__text {  
+        width: 40%;
+        font-size: 0.7rem;
+        padding: 0 1rem 1rem;
+        background-color: white;
+        border-left: 6px solid $primary-two;
+        margin: 0 -0.38rem;
+    }
+    &__info {
+        &--bold {
+            font-weight: 600;
+            color: black;
+            background-color: white;
+            border-left: 6px solid $primary-two;
+            margin: 0 -0.38rem;
+        }
+    }
+}
+
+.none {
+    display: none;
+}
