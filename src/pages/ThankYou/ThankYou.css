@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.thankyou {
+  background-image: url("../../assets/thankyou-background.png");
+  background-repeat: no-repeat;
+  min-width: 1440px;
+  min-height: 724.5px;
+}
+.thankyou__background {
+  position: absolute;
+  background-color: #13182c;
+  opacity: 0.8;
+  min-width: 1440px;
+  min-height: 724.5px;
+  width: 100%;
+}/*# sourceMappingURL=ThankYou.css.map */
