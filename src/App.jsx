@@ -6,7 +6,6 @@ import ThankYou from "./pages/ThankYou/ThankYou";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import ChartsPage from "./pages/ChartsPage/ChartsPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
-import ScrollBar from "./components/ScrollBar/ScrollBar";
 function App() {
   return (
     <BrowserRouter>
