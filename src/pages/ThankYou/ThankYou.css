@@ -23,6 +23,14 @@
   min-height: 45.28125rem;
   width: 100%;
 }
+.thankyou__x {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.thankyou__x:hover {
+  cursor: pointer;
+}
 .thankyou__modal {
   position: relative;
   z-index: 1;
