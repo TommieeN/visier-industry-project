@@ -20,7 +20,16 @@
         min-width: 90rem;
         min-height: 45.28125rem;
         width: 100%;
+    }
 
+    &__x {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     &__modal {
