@@ -21,7 +21,7 @@ const initialDataLine = {
     "Nov 2022",
     "Dec 2022",
     "Jan 2023",
-    "March 2023",
+    "Feb 2023",
   ],
   datasets: [
     {
@@ -73,7 +73,7 @@ function ResultsComponent({ chartTypeDefault = "bar" }) {
           "Nov 2022",
           "Dec 2022",
           "Jan 2023",
-          "Mar 2023",
+          "Feb 2023",
         ],
         datasets: [
           {
@@ -154,11 +154,10 @@ function ResultsComponent({ chartTypeDefault = "bar" }) {
       {/* ----------------------------- */}
       <div className="results__details">
         {/* TOMMY'S STUFF GOES HERE. <SummaryComponent/> */}
+        {/* <ResultsComponent />; */}
       </div>
     </div>
   );
 }
-
-<ResultsComponent />;
 
 export default ResultsComponent;

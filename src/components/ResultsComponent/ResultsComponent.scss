@@ -6,7 +6,7 @@
   min-height: 95vh;
   display: flex;
   &__graph {
-    width: 40%;
+    flex: 1;
     background-color: white;
     display: flex;
     align-items: center;
@@ -62,7 +62,7 @@
   }
 
   &__details {
-    flex-grow: 1;
+    flex: 1;
     background-color: lightgray;
     display: flex;
     align-items: center;
@@ -80,4 +80,3 @@
   &__info {
   }
 }
-
