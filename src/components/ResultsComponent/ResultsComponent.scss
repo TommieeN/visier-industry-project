@@ -1,0 +1,79 @@
+@use "src/styles/partials/_variables.scss" as *;
+@use "src/styles/partials/_mixins.scss" as *;
+@use "src/styles/partials/_global" as *;
+
+.results {
+  min-height: 95vh;
+  display: flex;
+  &__graph {
+    width: 40%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &--container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      justify-content: center;
+      padding: 1rem;
+    }
+    &--buttons-container {
+      display: flex;
+      gap: 1rem;
+    }
+    &--button {
+      color: black;
+      padding: 0.4rem 2rem;
+      text-decoration: none;
+      background-color: $background-color-two;
+      border-radius: 2rem;
+      border-color: lightgrey;
+      border-style: solid;
+      &:hover {
+        cursor: pointer;
+        background-color: darken($background-color-two, 5%);
+      }
+      &--active {
+        color: $primary-one;
+        background-color: $primary-two;
+        &:hover {
+          background-color: darken($primary-two, 5%);
+        }
+      }
+    }
+
+    &--slider {
+      width: 100%;
+      padding: 0 6rem 0 6rem;
+      &--input {
+        width: 100%;
+      }
+      &--labels {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &__details {
+    flex-grow: 1;
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  &__button {
+    background-color: pink;
+    padding: 3rem;
+  }
+  &__info {
+  }
+}
