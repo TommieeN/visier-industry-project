@@ -1,9 +1,7 @@
 @use 'src/styles/partials/_variables.scss' as *;
 @use 'src/styles/partials/_mixins.scss' as *;
 @use 'src/styles/partials/_global' as *;
-@use 'src/styles/partials/_variables.scss' as *;
-@use 'src/styles/partials/_mixins.scss' as *;
-@use 'src/styles/partials/_global' as *;
+
 
 
 .container {
@@ -11,7 +9,7 @@
   width: 100%;
 }
 
-.sidebar {
+.charts__sidebar {
   background-color: #000;
   width: 3.3125rem;
 }
@@ -26,8 +24,47 @@
     background-color: $primary-one;
     padding: .75rem 1.5rem;
 
+    &-box {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-link-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 1.25rem;
+    }
+
+    &-linkbox {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: .5rem;
+        color: #64748B;
+
+        &:hover {
+            cursor: pointer;
+            color: #000000;
+            fill: #000000;
+        }
+    }
+
+    &-text {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+        font-weight: bold;
+    }
+
+    &-link-img {
+        height: 1.5rem;
+    }
+
     &-img {
       height: 3.75rem;
+    }
+
+    &-text {
     }
   }
 
