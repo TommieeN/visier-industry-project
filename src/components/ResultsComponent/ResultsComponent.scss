@@ -50,6 +50,9 @@
       padding: 0 6rem 0 6rem;
       &--input {
         width: 100%;
+        &::-webkit-slider-runnable-track {
+          background-color: red;
+        }
       }
       &--labels {
         display: flex;
@@ -77,3 +80,4 @@
   &__info {
   }
 }
+
