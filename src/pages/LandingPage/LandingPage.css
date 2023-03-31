@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.section-step {
+  min-height: 95vh;
+  display: flex;
+}
+.section-step--side {
+  width: 40%;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section-step--main {
+  flex-grow: 1;
+  background-color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section-step__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.section-step__button {
+  background-color: pink;
+  padding: 3rem;
+}/*# sourceMappingURL=LandingPage.css.map */
