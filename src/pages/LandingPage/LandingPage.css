@@ -5,6 +5,63 @@
   font-family: "Open Sans", sans-serif;
 }
 
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.sidebar {
+  background-color: #000;
+  width: 3.3125rem;
+  height: 100%;
+}
+
+.main {
+  width: 100%;
+}
+.main__progression {
+  height: 5rem;
+  flex-basis: 100%;
+  background-color: #50A1A7;
+  padding: 0.75rem 1.5rem;
+}
+.main__content {
+  height: 100%;
+  padding: 0 5rem;
+  background-color: #42858B;
+}
+.main__option {
+  padding-top: 6rem;
+}
+.main__option-title {
+  font-size: 1.75rem;
+  line-height: 3rem;
+}
+.main__option-buttons {
+  margin-top: 2.5rem;
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+}
+.main__option-button {
+  height: 3.75rem;
+  width: 14.625rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.75rem;
+  transition: background-color 0.25s, box-shadow 0.25s, transform 0.25s, color 0.125s;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #000000;
+}
+.main__option-button:hover {
+  background-color: #171F2D;
+  box-shadow: -1px 1px 3px #13182c;
+  color: #ffffff;
+  cursor: pointer;
+}
+
 .section-step {
   min-height: 95vh;
   display: flex;
