@@ -20,7 +20,7 @@
   &__progression {
     height: 5rem;
     flex-basis: 100%;
-    background-color: $primary-two;
+    background-color: $primary-one;
     padding: .75rem 1.5rem;
 
     &-box {
@@ -28,9 +28,8 @@
   }
 
   &__content {
-    height: 100%;
-    padding: 0 5rem;
-    background-color: $primary-three;
+    padding: 0 5rem 5rem;
+    background-color: #ffffff;
   }
 
   &__option {
@@ -80,6 +79,7 @@
 .active {
   background-color: $primary-two;
   color: #ffffff;
+  border: none;
 }
 
 

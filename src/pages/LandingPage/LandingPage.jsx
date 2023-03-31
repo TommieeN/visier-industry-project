@@ -1,6 +1,6 @@
 import "./LandingPage.scss";
 import sidebar from "../../assets/visier-sidebar.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function LandingPage() {
@@ -12,15 +12,22 @@ function LandingPage() {
   const [ optionThree, setOptionThree ] = useState(false);
   const [ optionFour, setOptionFour ] = useState(false);
 
+// let rooted = window.document.root;
+//   useEffect(() => {
+//     rooted = window.document.root;  
+//   }, []);
+
   function firstClicked(e) {
     setOptionOne(true);
     e.preventDefault();
     e.target.classList.add("active");
+    e.target.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   }
 
   function secondClicked(e) {
     setOptionTwo(true);
     e.preventDefault();
+    e.target.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
     e.target.classList.add("active");
   }
 
@@ -75,7 +82,7 @@ function LandingPage() {
                 <h2 className="main__option-title">1. What do you want to focus on today?</h2>
                 <div className="main__option-buttons">
                   <button className="main__option-button" onClick={firstClicked}>People Data</button>
-                  <button className="main__option-button" onClick={clicked}>Business Data</button>
+                  <button href="http://www.google.com" className="main__option-button" onClick={clicked}>Business Data</button>
                 </div>
               </div>
             </div>
