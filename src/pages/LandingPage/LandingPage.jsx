@@ -1,15 +1,57 @@
 import "./LandingPage.scss";
 import sidebar from "../../assets/visier-sidebar.png";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function LandingPage() {
 
-  function clicked(e) {
+  let navigate = useNavigate(); 
+
+  const [ optionOne, setOptionOne ] = useState(false);
+  const [ optionTwo, setOptionTwo ] = useState(false);
+  const [ optionThree, setOptionThree ] = useState(false);
+  const [ optionFour, setOptionFour ] = useState(false);
+
+  function firstClicked(e) {
+    setOptionOne(true);
     e.preventDefault();
-    console.log(e.target);
     e.target.classList.add("active");
   }
 
-  
+  function secondClicked(e) {
+    setOptionTwo(true);
+    e.preventDefault();
+    e.target.classList.add("active");
+  }
+
+  function thirdClicked(e) {
+    setOptionThree(true);
+    e.preventDefault();
+    e.target.classList.add("active");
+    if (optionFour === true) {
+      navigate('/welcome')
+    }
+  }
+
+  function fourthClicked(e) {
+    setOptionFour(true);
+    e.preventDefault();
+    e.target.classList.add("active");
+    if (optionThree === true) {
+      navigate('/welcome')
+    }
+  }
+
+  function clicked(e) {
+    e.preventDefault();
+    if (e.target.classList.contains("active")) {
+      e.target.classList.remove("active");
+    } else {
+    e.target.classList.add("active");
+    }
+  }
+
+
 
 
 
@@ -32,37 +74,41 @@ function LandingPage() {
               <div className="main__option">
                 <h2 className="main__option-title">1. What do you want to focus on today?</h2>
                 <div className="main__option-buttons">
-                  <button className="main__option-button" onClick={clicked}>People Data</button>
+                  <button className="main__option-button" onClick={firstClicked}>People Data</button>
                   <button className="main__option-button" onClick={clicked}>Business Data</button>
                 </div>
               </div>
             </div>
 
-            <div className="main__content-box content-two">
-              <div className="main__option">
-                <h2 className="main__option-title">2. What kind of people data are you looking for?</h2>
-                <div className="main__option-buttons">
-                  <button className="main__option-button">Talent Management</button>
-                  <button className="main__option-button" onClick={clicked}>Employee Engagement</button>
-                  <button className="main__option-button" onClick={clicked}>Diversity & Equity</button>
-                  <button className="main__option-button" onClick={clicked}>Compensation</button>
+            {optionOne === true && 
+              <div className="main__content-box content-two">
+                <div className="main__option">
+                  <h2 className="main__option-title">2. What kind of people data are you looking for?</h2>
+                  <div className="main__option-buttons">
+                    <button className="main__option-button" onClick={clicked}>Talent Management</button>
+                    <button className="main__option-button" onClick={secondClicked}>Employee Engagement</button>
+                    <button className="main__option-button" onClick={clicked}>Diversity & Equity</button>
+                    <button className="main__option-button" onClick={clicked}>Compensation</button>
+                  </div>
                 </div>
               </div>
-            </div>
+            }
 
-            <div className="main__content-box content-three">
-              <div className="main__option">
-                <h2 className="main__option-title">3. What kind of Employee data are you looking for? <span className="regular">(Select as many as you like)</span></h2>
-                <div className="main__option-buttons">
-                  <button className="main__option-button" onClick={clicked}>Employee Experience</button>
-                  <button className="main__option-button" onClick={clicked}>Employee Feedback</button>
-                  <button className="main__option-button" onClick={clicked}>Employee Sentiment</button>
-                  <button className="main__option-button" onClick={clicked}>Compensation</button>
-                  <button className="main__option-button" onClick={clicked}>Performance</button>
-                  <button className="main__option-button" onClick={clicked}>Retention</button>
+            {optionOne === true && optionTwo === true && 
+              <div className="main__content-box content-three">
+                <div className="main__option">
+                  <h2 className="main__option-title">3. What kind of Employee data are you looking for? <span className="regular">(Select as many as you like)</span></h2>
+                  <div className="main__option-buttons">
+                    <button className="main__option-button" onClick={clicked}>Employee Experience</button>
+                    <button className="main__option-button" onClick={thirdClicked}>Employee Feedback</button>
+                    <button className="main__option-button" onClick={clicked}>Employee Sentiment</button>
+                    <button className="main__option-button" onClick={clicked}>Compensation</button>
+                    <button className="main__option-button" onClick={fourthClicked}>Performance</button>
+                    <button className="main__option-button" onClick={clicked}>Retention</button>
+                  </div>
                 </div>
               </div>
-            </div>
+            }
           </div>
         </div>
       </div>
